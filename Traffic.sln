@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traffic", "Traffic\Traffic.csproj", "{AFFC175F-D051-4060-82FA-86FCEA1A0EDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficConsoleTests", "TrafficConsoleTests\TrafficConsoleTests.csproj", "{9E584185-9E04-452F-A884-9E85A98A9C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficTests", "TrafficTests\TrafficTests.csproj", "{153E99D4-AEB9-4743-835B-0F7CC8D86B2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{AFFC175F-D051-4060-82FA-86FCEA1A0EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFFC175F-D051-4060-82FA-86FCEA1A0EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFFC175F-D051-4060-82FA-86FCEA1A0EDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E584185-9E04-452F-A884-9E85A98A9C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E584185-9E04-452F-A884-9E85A98A9C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E584185-9E04-452F-A884-9E85A98A9C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E584185-9E04-452F-A884-9E85A98A9C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{153E99D4-AEB9-4743-835B-0F7CC8D86B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{153E99D4-AEB9-4743-835B-0F7CC8D86B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{153E99D4-AEB9-4743-835B-0F7CC8D86B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{153E99D4-AEB9-4743-835B-0F7CC8D86B2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
