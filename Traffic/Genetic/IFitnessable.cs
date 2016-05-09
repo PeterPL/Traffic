@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Traffic.Genetic
 {
-    interface IGeneticAlgorithm
+    public interface IFitnessable
     {
-        void InitializePopulation();
-        void RunAlgorithm();
+        double GetFitness(Chromosome chromosome);
     }
 }

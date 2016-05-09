@@ -56,8 +56,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Genetic\Chromosome.cs" />
-    <Compile Include="Genetic\GeneticOperator.cs" />
-    <Compile Include="Genetic\IGeneticAlgorithm.cs" />
+    <Compile Include="Genetic\Generators\ChromosomeGenerator.cs" />
+    <Compile Include="Genetic\Gene.cs" />
+    <Compile Include="Genetic\Generators\GeneGenerator.cs" />
+    <Compile Include="Genetic\GeneticAlgorithm.cs" />
+    <Compile Include="Genetic\SelectionMethods\TournamentGeneticSelectionMethod.cs" />
+    <Compile Include="Genetic\IFitnessable.cs" />
+    <Compile Include="Genetic\Operators\IGeneticCrossOperator.cs" />
+    <Compile Include="Genetic\Operators\IMutationGeneticOperator.cs" />
+    <Compile Include="Genetic\Operators\OnePlaceGeneticCrossOperator.cs" />
+    <Compile Include="Genetic\Operators\OnePlaceGeneticMutationOperator.cs" />
+    <Compile Include="Genetic\SelectionMethods\IGeneticSelectionMethod.cs" />
     <Compile Include="TrafficModel\Crossroad.cs" />
     <Compile Include="TrafficModel\Light.cs" />
     <Compile Include="TrafficModel\Vehicle.cs" />

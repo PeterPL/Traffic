@@ -10,16 +10,15 @@ namespace TrafficConsoleTests
     {
         static void Main(string[] args)
         {
-
-            Chromosome c1 = ChromosomeGenerator.GetRandomChromosome(3, 4);
-            Chromosome c2 = ChromosomeGenerator.GetRandomChromosome(3, 4);
-            Console.WriteLine(c1.ToString());
-            Chromosome c3 = GeneticOperator.MutateOnOnePlace(c1);
-            Console.WriteLine(c3);
-
+            FitnessTestClass test = new FitnessTestClass();
+            GeneticAlgorithm gen = new GeneticAlgorithm(10, 1, 5, 10,0.1, new TournamentGeneticSelectionMethod(2, CriterionOfSelection.MAX), test, new OnePlaceGeneticCrossOperator(2), new OnePlaceGeneticMutationOperator());
+            gen.RunAlgorithm();
+            Console.WriteLine(gen.ShowPopulation());
             Console.ReadKey();
             
         }
 
     }
+
+    
 }
