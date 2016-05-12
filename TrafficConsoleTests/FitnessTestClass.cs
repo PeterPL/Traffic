@@ -11,7 +11,7 @@ namespace TrafficConsoleTests
     {
         private double Quadro(double x)
         {
-            return x * x;
+            return 2*x;
         }
         public double GetFitness(Chromosome chromosome)
         {

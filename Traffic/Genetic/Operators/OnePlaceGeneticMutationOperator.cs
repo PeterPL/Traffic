@@ -9,7 +9,6 @@ namespace Traffic.Genetic
     public class OnePlaceGeneticMutationOperator : IGeneticMutationOperator
     {
         private Random _rand;
-        private double _mutationProbability;
         public OnePlaceGeneticMutationOperator()
         {
             _rand = new Random();
@@ -18,13 +17,13 @@ namespace Traffic.Genetic
         {
             Chromosome mutatedChromosome = ChromosomeGenerator.GetSpecificChromosome(chromosome.Genes);
    
-            int mutatePlace = _rand.Next(0, mutatedChromosome.Length);
+            int randomMutatePlace = _rand.Next(0, mutatedChromosome.Length);
             int placeHelper = 0;
             for (int i = 0; i < mutatedChromosome.Genes.Count; i++)
             {
                 for (int j = 0; j < mutatedChromosome.Genes[i].Bits.Length; j++)
                 {
-                    if (placeHelper == mutatePlace)
+                    if (placeHelper == randomMutatePlace)
                     {
                         if (mutatedChromosome.Genes[i].Bits[j] == 1)
                             mutatedChromosome.Genes[i].Bits[j] = 0;

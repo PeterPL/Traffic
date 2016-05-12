@@ -8,25 +8,27 @@ namespace Traffic.Genetic
 {
     public class OnePlaceGeneticCrossOperator : IGeneticCrossOperator
     {
-        private int _place;
-        public OnePlaceGeneticCrossOperator(int place)
+        private Random _rand;
+
+        public OnePlaceGeneticCrossOperator()
         {
-            _place = place;
+            _rand = new Random();
         }
+        
         public List<Chromosome> Cross(Chromosome chromosomeOne, Chromosome chromosomeTwo)
         {
             int numberOfGenes = chromosomeOne.Genes.Count;
+            int randomPlaceOfCross = _rand.Next(chromosomeOne.Length);
 
             Chromosome childChromosomeOne = ChromosomeGenerator.GetSpecificChromosome(chromosomeOne.Genes);
             Chromosome childChromosomeTwo = ChromosomeGenerator.GetSpecificChromosome(chromosomeTwo.Genes);
 
-            int whereIAm = _place;
             for (int i = 0; i < numberOfGenes; i++)
             {
                 for (int j = 0; j < childChromosomeOne.Genes[i].Bits.Length; j++)
                 {
-                    if (whereIAm > 0)
-                        whereIAm -= 1;
+                    if (randomPlaceOfCross > 0)
+                        randomPlaceOfCross -= 1;
 
                     else
                     {

@@ -11,7 +11,10 @@ namespace TrafficConsoleTests
         static void Main(string[] args)
         {
             FitnessTestClass test = new FitnessTestClass();
-            GeneticAlgorithm gen = new GeneticAlgorithm(10, 1, 5, 10,0.1, new TournamentGeneticSelectionMethod(2, CriterionOfSelection.MAX), test, new OnePlaceGeneticCrossOperator(2), new OnePlaceGeneticMutationOperator());
+            IGeneticSelectionMethod selection = new TournamentGeneticSelectionMethod(2, CriterionOfSelection.MAX);
+            IGeneticMutationOperator mutation = new OnePlaceGeneticMutationOperator();
+            IGeneticCrossOperator cross = new OnePlaceGeneticCrossOperator();
+            GeneticAlgorithm gen = new GeneticAlgorithm(8, 1, 5, 100,0.8, selection, test, cross, mutation);
             gen.RunAlgorithm();
             Console.WriteLine(gen.ShowPopulation());
             Console.ReadKey();

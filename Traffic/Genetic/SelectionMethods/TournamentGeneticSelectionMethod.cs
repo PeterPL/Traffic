@@ -24,10 +24,14 @@ namespace Traffic.Genetic
             for(int i=0; i<fitnessesOfChromosomes.Count; i++)
             {
                 List<Chromosome> groupOfChromosomes = new List<Chromosome>();
-                for(int j=0; j<_amountOfSingleTournament; j++)
+                groupOfChromosomes.Add(fitnessesOfChromosomes[i].Item1);
+                for(int j=1; j<_amountOfSingleTournament; j++)
                 {
                     int randomIndex = _rand.Next(0, fitnessesOfChromosomes.Count);
-                    groupOfChromosomes.Add(fitnessesOfChromosomes[randomIndex].Item1);
+                    Chromosome cr = fitnessesOfChromosomes[randomIndex].Item1;
+                    if (!groupOfChromosomes.Contains(cr))
+                        groupOfChromosomes.Add(fitnessesOfChromosomes[randomIndex].Item1);
+                    else j--;
                 }
                 parents.Add(ChooseBestChromosomeFromGroup(groupOfChromosomes, fitnessesOfChromosomes));
             }
