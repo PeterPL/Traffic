@@ -9,6 +9,7 @@ namespace Traffic.Genetic
     public interface IGeneticSelectionMethod
     {
         List<Chromosome> GetParents(List<Tuple<Chromosome, double>> fitnessesOfChromosomes );
+        void SetCriterionOfSelection(CriterionOfSelection criterionOfSelection);
        
     }
     

@@ -9,20 +9,13 @@ namespace TrafficConsoleTests
 {
     public class FitnessTestClass : IFitnessable
     {
-        private double Quadro(double x)
+        private double Quadro(double x, double y, double z)
         {
-            return 2*x;
+            return 2 * x - x * y + z;
         }
         public double GetFitness(Chromosome chromosome)
         {
-            double temp = 0;
-            int count = chromosome.Genes.Count;
-            for(int i=0; i<count; i++)
-            {
-                temp = chromosome.Genes[i].ConvertToNumber();
-            }
-            return Quadro(temp);
-
+            return Quadro(chromosome.Genes[0].ConvertToNumber(),chromosome.Genes[1].ConvertToNumber(),chromosome.Genes[2].ConvertToNumber());
         }
     }
 }

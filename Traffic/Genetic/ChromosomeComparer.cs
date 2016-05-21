@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Traffic.TrafficModel
+namespace Traffic.Genetic
 {
-    public class Vehicle
+    public class ChromosomeComparer
     {
+        
     }
 }

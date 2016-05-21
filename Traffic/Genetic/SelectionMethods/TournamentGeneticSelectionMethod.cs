@@ -11,10 +11,14 @@ namespace Traffic.Genetic
         private int _amountOfSingleTournament;
         private CriterionOfSelection _criterion;
         private Random _rand;
-        public TournamentGeneticSelectionMethod(int amountOfSingleTournament, CriterionOfSelection criterion)
+        public TournamentGeneticSelectionMethod(int amountOfSingleTournament)
         {
             _rand = new Random();
             _amountOfSingleTournament = amountOfSingleTournament;
+        }
+
+        public void SetCriterionOfSelection(CriterionOfSelection criterion)
+        {
             _criterion = criterion;
         }
 

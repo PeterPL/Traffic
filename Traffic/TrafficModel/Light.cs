@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Traffic.TrafficModel
 {
-    class Light
+    public class Light
     {
     }
 }

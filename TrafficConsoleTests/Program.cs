@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Traffic.Genetic;
+using Traffic.Genetic.Operators;
+
 namespace TrafficConsoleTests
 {
     class Program
@@ -11,12 +13,16 @@ namespace TrafficConsoleTests
         static void Main(string[] args)
         {
             FitnessTestClass test = new FitnessTestClass();
-            IGeneticSelectionMethod selection = new TournamentGeneticSelectionMethod(2, CriterionOfSelection.MAX);
-            IGeneticMutationOperator mutation = new OnePlaceGeneticMutationOperator();
-            IGeneticCrossOperator cross = new OnePlaceGeneticCrossOperator();
-            GeneticAlgorithm gen = new GeneticAlgorithm(8, 1, 5, 100,0.8, selection, test, cross, mutation);
+            IGeneticSelectionMethod selection = new TournamentGeneticSelectionMethod(2);
+            IGeneticMutationOperator mutation = new LocalOnePlaceGeneticMutationOperator();
+            IGeneticCrossOperator cross = new LocalOnePlaceGeneticCrossOperator();
+            PopulationWatcher logger = new PopulationWatcher();
+            GeneticAlgorithm gen = new GeneticAlgorithm(4, 3, 5, 100, 0.2, selection,CriterionOfSelection.MAX, test, cross, mutation);
+            gen.SetLogger(logger);
             gen.RunAlgorithm();
-            Console.WriteLine(gen.ShowPopulation());
+            
+            Console.WriteLine(logger.ShowData());
+            Console.WriteLine(gen.BestChromosome.ToString());
             Console.ReadKey();
             
         }

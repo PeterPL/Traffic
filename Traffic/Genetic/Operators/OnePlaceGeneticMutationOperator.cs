@@ -15,8 +15,10 @@ namespace Traffic.Genetic
         }
         public Chromosome Mutate(Chromosome chromosome)
         {
-            Chromosome mutatedChromosome = ChromosomeGenerator.GetSpecificChromosome(chromosome.Genes);
-   
+            List<Gene> listOfGenes = new List<Gene>();
+            chromosome.Genes.ForEach(g => listOfGenes.Add(GeneGenerator.GetSpecificGene(g.Bits)));
+            Chromosome mutatedChromosome = ChromosomeGenerator.GetSpecificChromosome(listOfGenes);
+
             int randomMutatePlace = _rand.Next(0, mutatedChromosome.Length);
             int placeHelper = 0;
             for (int i = 0; i < mutatedChromosome.Genes.Count; i++)
